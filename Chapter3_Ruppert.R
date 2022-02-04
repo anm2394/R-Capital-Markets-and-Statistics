@@ -73,9 +73,19 @@ autoplot(rates)
 autoplot(rates, facets=FALSE)
 last(rates)
 plot_grid(rates$R_3M,rates$R_6M,rates$R_1Y,rates$R_2Y,rates$R_3Y)
-#random stuff
-cat('Price ',price)
-sprintf('any value %d',price)
-res<-price-C/r+(par-C/r)*(1+r)^-(2*t)
-plot(res)
-plot(value,)
+#Problem #7: Describe how the yield curve changes between December 1, 1985 and March 1, 1986. Describe the behavior of both the short and long ends of
+#the yield curves.
+start.date=as.POSIXct("1985-12-01")
+end.date=as.POSIXct("1986-03-01")
+rates<-FedYieldCurve[paste(start.date,end.date,sep="::")]
+TSG<-autoplot(rates,facet=FALSE)
+TSG+ggtitle("Yields from 01/12/1985 to 01/03/1986")+xlab("Dates")+ylab('Yields')+ggthemes::theme_solarized()
+#Problem #8: Plot the yield curves from December 1, 1986 to March 1, 1987 and describe how the yield curve changes during this period.
+start.date=as.POSIXct("1986-12-01")
+end.date=as.POSIXct("1987-03-01")
+rates<-FedYieldCurve[paste(start.date,end.date,sep="::")]
+TSG<-autoplot(rates,facet=FALSE)
+TSG+ggtitle("Yields from 01/12/1986 to 01/03/1987")+xlab("Dates")+ylab('Yields')+ggthemes::theme_solarized()
+
+#Problem#9: Plot the forward rates on the same dates used before, 1985-12-01, 1986-01-01, 1986-02-01, and 1986-03-01. Describe how the forward rates changed from month to month.
+#after chapter 21
