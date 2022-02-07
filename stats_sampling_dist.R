@@ -1,0 +1,35 @@
+#Q5 Part 1
+set.seed(333)
+X1<-rnorm(1000)
+X2<-rnorm(1000)
+X3<-rnorm(1000)
+plot(density(X1))
+plot(density(X2))
+plot(density(X3))
+samplemX1=mean(X1)
+varianceX1=var(X1)
+samplemX2=mean(X2)
+varianceX2=var(X2)
+samplemX3=mean(X3)
+varianceX3=var(X3)
+#sample mean is almost equal to the mean of the distribution and same is for variance
+#Part 2
+Z1=X1+2*X2+3*X3
+plot(density(Z1))
+Z1mean<-mean(Z1)
+Z1var<-var(Z1)
+Z2<-X1**2+X2**2+X3**2
+Z2mean<-mean(Z2)
+Z2var<-var(Z2)
+plot(density(Z2))
+Z3<-((X1-X3)**2)/2
+Z3mean<-mean(Z3)
+Z3var<-var(Z3)
+plot(density(Z3))
+Z4<-2*X3**2/(X1**2+X2**2)
+Z4mean<-mean(Z4)
+z4var<-var(Z4)
+plot(density(Z4))
+x<-seq(0,1000,by=1)
+f<-df(x,df1=1,df2=2)
+plot(density(f))
